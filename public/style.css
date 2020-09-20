@@ -1,0 +1,70 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  background-color: rgba(16,93,243,40%);
+}
+.journal{
+  background-image: url('https://static.wixstatic.com/media/f88ca8_695b862faba4411ab7aad7bedf4ef59b~mv2.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position:
+}
+img{
+  height: 200px;
+}
+.well{
+  height: 100px;
+  width: 200px;
+}
+.well, p{
+  font-size: 10px;
+}
+.well, h3{
+  font-size: 12px;
+}
+.container{
+  background-color: white;
+  width: 50%;
+}
+.home{
+  background-color: rgba(16,93,243,40%);
+}
+#emailHold{
+  display: none;
+}
+#messageHold{
+  width: 600px;
+  margin-left: 60%;
+  font-size: 15px;
+}
+#bottomh{
+  width: 100%;
+  color: black;
+  font-size: 25px;
+  margin-left: 85%;
+  font-weight: bold;
+  font-family: cursive;
+}
+.messages{
+  width: 100%;
+  color: black;
+  font-size: 17px;
+  margin-left: 60%;
+}
+.day, #submit, #reset {
+  width: 50%;
+  margin-left: 80%;
+  margin-top: 1%;
+}
+.header{
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 50px;
+  color: black;
+}
+.header1{
+  color: black;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: cursive;
+}

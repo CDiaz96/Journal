@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <title>Journal</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="journal">
+
+<div class="contain">
+
+    <div class="page-header text-center">
+        <h1 class="header">Welcome</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <!-- <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>id</strong>: <%= user._id %><br>
+                        <strong>email</strong>: <%= user.local.email %><br>
+                        <strong>password</strong>: <%= user.local.password %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div> -->
+
+  <!-- <========= Receiving and Displaying Messages============> -->
+
+        <div class="col-sm-6">
+          <!-- <h3>Your Logs</h3> -->
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message">
+              <span id="emailHold"><%= messages[i].name %></span>
+              <span><%= messages[i].msg %></span>
+              <span><%= messages[i].date %></span>
+              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+            </li>
+          <% } %>
+          </ul>
+
+          <h2 id="bottomh">Whats on your mind today?</h2>
+        <% if (user.local.email) { %>
+
+          <form action="/messages" method="POST">
+
+            <input id="emailHold" type="text" value="<%= user.local.email %>" name="name">
+
+            <textarea id="messageHold" name="msg" type="text"  placeholder="Dear Diary..."></textarea>
+             <input class="day" type="date" name="date" value="">
+
+            <button id="submit" type="submit">Submit</button>
+            <button id="reset" type="reset">Reset</button>
+          </form>
+        </div>
+        <% } %>
+
+</div>
+
+
+<script src="main.js"></script>
+
+</body>
+</html>
