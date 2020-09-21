@@ -1,3 +1,7 @@
+Journal FullStack
+
+![Journal](public/img/journal.png)
+
 ## Installation
 
 1. Clone repo
