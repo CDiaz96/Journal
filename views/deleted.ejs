@@ -10,14 +10,14 @@
 
 <div class="contain">
 
-    <div class="page-header text-center">
-      <h1 class="header">Welcome</h1>
-      <nav>
-          <a href="/profile" class="btn btn-default btn-sm">Profile</a>
-          <a href="/deleted" class="btn btn-default btn-sm">Deleted</a>
-          <a href="/logout" class="btn btn-default btn-sm">Logout</a>
-      </nav>
-    </div>
+  <div class="page-header text-center">
+    <h1 class="header">Welcome</h1>
+    <nav>
+        <a href="/profile" class="btn btn-default btn-sm">Profile</a>
+        <a href="/deleted" class="btn btn-default btn-sm">Deleted</a>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </nav>
+  </div>
 
     <div class="row">
 
@@ -44,39 +44,23 @@
   <!-- <========= Receiving and Displaying Messages============> -->
 
         <div class="col-sm-6">
-          <!-- <h3>Your Logs</h3> -->
 
           <ul class="messages">
-          <% for(var i=0; i<messages.length; i++) {%>
-              <% if( messages[i].delete== 'no'){ %>
-                <% if( messages[i].name == user.local.email){ %>
-
+          <% for(var i=0; i<messages.length; i++) { %>
+            <% if(messages[i].delete == 'yes'){ %>
+              <% if( messages[i].name == user.local.email){ %>
             <li class="message">
               <span id="emailHold"><%= messages[i].name %></span>
               <span><%= messages[i].msg %></span>
               <span><%= messages[i].date %></span>
-              <span><i class="fa fa-minus-circle" aria-hidden="true"></i></span>
+              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
             </li>
           <% } %>
             <% } %>
             <% } %>
           </ul>
 
-          <h2 id="bottomh">Whats on your mind today?</h2>
-        <% if (user.local.email) { %>
 
-          <form action="/messages" method="POST">
-
-            <input id="emailHold" type="text" value="<%= user.local.email %>" name="name">
-
-            <textarea id="messageHold" name="msg" type="text"  placeholder="Dear Diary..."></textarea>
-             <input class="day" type="date" name="date" value="">
-
-            <button id="submit" type="submit">Submit</button>
-            <button id="reset" type="reset">Reset</button>
-          </form>
-        </div>
-        <% } %>
 
 </div>
 
